@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Raag & Riwaaz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>Raag & Riwaaz</h1>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link active">Shop</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <a href="cart.html" class="cart-icon">Cart (0)</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shop Hero Section -->
+    <section class="shop-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> / <span>Shop</span>
+            </div>
+            <h1>Our Collection</h1>
+            <p>Discover pieces that honor heritage while embracing modern style</p>
+        </div>
+    </section>
+
+    <!-- Shop Filters and Sorting -->
+    <section class="shop-filters">
+        <div class="container">
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <label for="category-filter">Category</label>
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="kurtas">Kurtas</option>
+                        <option value="sherwanis">Sherwanis</option>
+                        <option value="hoodies">Hoodies</option>
+                        <option value="t-shirts">T-Shirts</option>
+                        <option value="accessories">Accessories</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="size-filter">Size</label>
+                    <select id="size-filter">
+                        <option value="all">All Sizes</option>
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                        <option value="xxl">XXL</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="price-filter">Price Range</label>
+                    <select id="price-filter">
+                        <option value="all">All Prices</option>
+                        <option value="0-2000">₹0 - ₹2,000</option>
+                        <option value="2000-5000">₹2,000 - ₹5,000</option>
+                        <option value="5000-10000">₹5,000 - ₹10,000</option>
+                        <option value="10000+">₹10,000+</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="sort-filter">Sort By</label>
+                    <select id="sort-filter">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="newest">Newest First</option>
+                        <option value="popular">Most Popular</option>
+                    </select>
+                </div>
+
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid">Grid</button>
+                    <button class="view-btn" data-view="list">List</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="shop-products">
+        <div class="container">
+            <div class="products-grid shop-grid" id="products-container">
+                <!-- Heritage Collection -->
+                <div class="product-card" data-category="kurtas" data-price="3500" data-size="m">
+                    <div class="product-image">
+                        <img src="https://picsum.photos/400/400?random=1"
+                             alt="Heritage Kurta - Indigo Collection"
+                             class="product-img"
+                             loading="lazy">
+                        <div class="product-badge">New Arrival</div>
+                        <div class="product-overlay">
+                            <span>Heritage Kurta</span>
+                            <p>Indigo Collection</p>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Heritage Kurta - Indigo</h3>
+                        <p class="product-category">Premium Kurta</p>
+                        <p class="product-price">₹3,500</p>
+                        <div class="product-actions">
+                            <a href="products.html" class="btn-outline">View Details</a>
+                            <button class="btn-primary add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="kurtas" data-price="3200" data-size="l">
+                    <div class="product-image">
+                        <div class="product-placeholder heritage-pattern">
+                            <div class="product-badge">Bestseller</div>
+                            <div class="product-overlay">
+                                <span>Heritage Kurta</span>
+                                <p>Crimson Collection</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Heritage Kurta - Crimson</h3>
+                        <p class="product-category">Premium Kurta</p>
+                        <p class="product-price">₹3,200</p>
+                        <div class="product-actions">
+                            <a href="products.html" class="btn-outline">View Details</a>
+                            <button class="btn-primary add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sherwanis" data-price="8500" data-size="l">
+                    <div class="product-image">
+                        <img src="https://picsum.photos/400/400?random=2"
+                             alt="Modern Sherwani - Royal Collection"
+                             class="product-img"
+                             loading="lazy">
+                        <div class="product-badge">Limited</div>
+                        <div class="product-overlay">
+                            <span>Modern Sherwani</span>
+                            <p>Royal Collection</p>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Modern Sherwani - Royal</h3>
+                        <p class="product-category">Premium Sherwani</p>
+                        <p class="product-price">₹8,500</p>
+                        <div class="product-actions">
+                            <a href="products.html" class="btn-outline">View Details</a>
+                            <button class="btn-primary add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="sherwanis" data-price="9200" data-size="xl">
+                    <div class="product-image">
+                        <div class="product-placeholder royal-pattern">
+                            <div class="product-badge">Premium</div>
+                            <div class="product-overlay">
+                                <span>Classic Sherwani</span>
+                                <p>Embroidered Collection</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Classic Sherwani - Embroidered</h3>
+                        <p class="product-category">Premium Sherwani</p>
+                        <p class="product-price">₹9,200</p>
+                        <div class="product-actions">
+                            <a href="products.html" class="btn-outline">View Details</a>
+                            <button class="btn-primary add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="hoodies" data-price="2800" data-size="m">
+                    <div class="product-image">
+                        <img src="https://picsum.photos/400/400?random=3"
+                             alt="Urban Hoodie - Heritage Collection"
+                             class="product-img"
+                             loading="lazy">
+                        <div class="product-badge">New</div>
+                        <div class="product-overlay">
+                            <span>Urban Hoodie</span>
+                            <p>Heritage Collection</p>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Urban Hoodie - Heritage</h3>
+                        <p class="product-category">Casual Wear</p>
+                        <p class="product-price">₹2,800</p>
+                        <div class="product-actions">
+                            <a href="products.html" class="btn-outline">View Details</a>
+                            <button class="btn-primary add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="hoodies" data-price="2600" data-size="l">
+                    <div class="product-image">
+                        <div class="product-placeholder urban-pattern">
+                            <div class="product-badge">Popular</div>
+                            <div class="product-overlay">
+                                <span>Street Hoodie</span>
+                                <p>Urban Collection</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Street Hoodie - Urban</h3>
+                        <p class="product-category">Casual Wear</p>
+                        <p class="product-price">₹2,600</p>
+                        <div class="product-actions">
+                            <a href="products.html" class="btn-outline">View Details</a>
+                            <button class="btn-primary add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="t-shirts" data-price="1200" data-size="m">
+                    <div class="product-image">
+                        <img src="https://picsum.photos/400/400?random=4"
+                             alt="Minimalist T-Shirt - Core Collection"
+                             class="product-img"
+                             loading="lazy">
+                        <div class="product-badge">Essential</div>
+                        <div class="product-overlay">
+                            <span>Minimalist T-Shirt</span>
+                            <p>Core Collection</p>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Minimalist T-Shirt</h3>
+                        <p class="product-category">Essential Wear</p>
+                        <p class="product-price">₹1,200</p>
+                        <div class="product-actions">
+                            <a href="products.html" class="btn-outline">View Details</a>
+                            <button class="btn-primary add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="t-shirts" data-price="1400" data-size="l">
+                    <div class="product-image">
+                        <div class="product-placeholder minimal-pattern">
+                            <div class="product-badge">Limited</div>
+                            <div class="product-overlay">
+                                <span>Heritage T-Shirt</span>
+                                <p>Artisan Collection</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Heritage T-Shirt</h3>
+                        <p class="product-category">Essential Wear</p>
+                        <p class="product-price">₹1,400</p>
+                        <div class="product-actions">
+                            <a href="products.html" class="btn-outline">View Details</a>
+                            <button class="btn-primary add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessories" data-price="800" data-size="one-size">
+                    <div class="product-image">
+                        <div class="product-placeholder accessory-pattern">
+                            <div class="product-badge">New</div>
+                            <div class="product-overlay">
+                                <span>Heritage Scarf</span>
+                                <p>Silk Collection</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Heritage Scarf - Silk</h3>
+                        <p class="product-category">Accessories</p>
+                        <p class="product-price">₹800</p>
+                        <div class="product-actions">
+                            <a href="products.html" class="btn-outline">View Details</a>
+                            <button class="btn-primary add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessories" data-price="1200" data-size="one-size">
+                    <div class="product-image">
+                        <div class="product-placeholder accessory-pattern">
+                            <div class="product-badge">Premium</div>
+                            <div class="product-overlay">
+                                <span>Embroidered Bag</span>
+                                <p>Artisan Collection</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Embroidered Bag</h3>
+                        <p class="product-category">Accessories</p>
+                        <p class="product-price">₹1,200</p>
+                        <div class="product-actions">
+                            <a href="products.html" class="btn-outline">View Details</a>
+                            <button class="btn-primary add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="kurtas" data-price="4100" data-size="xl">
+                    <div class="product-image">
+                        <div class="product-placeholder heritage-pattern">
+                            <div class="product-badge">Exclusive</div>
+                            <div class="product-overlay">
+                                <span>Festival Kurta</span>
+                                <p>Celebration Collection</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Festival Kurta - Celebration</h3>
+                        <p class="product-category">Premium Kurta</p>
+                        <p class="product-price">₹4,100</p>
+                        <div class="product-actions">
+                            <a href="products.html" class="btn-outline">View Details</a>
+                            <button class="btn-primary add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="t-shirts" data-price="1600" data-size="m">
+                    <div class="product-image">
+                        <div class="product-placeholder minimal-pattern">
+                            <div class="product-badge">Artist</div>
+                            <div class="product-overlay">
+                                <span>Artist T-Shirt</span>
+                                <p>Creative Collection</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Artist T-Shirt - Creative</h3>
+                        <p class="product-category">Essential Wear</p>
+                        <p class="product-price">₹1,600</p>
+                        <div class="product-actions">
+                            <a href="products.html" class="btn-outline">View Details</a>
+                            <button class="btn-primary add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-section">
+                <button class="btn-secondary load-more">Load More Products</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Join the List</h2>
+                <p>Be the first to know about new collections and exclusive offers</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Raag & Riwaaz</h3>
+                    <p>Where Culture Becomes Style</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html"><span class="footer-icon">🏛️</span>About Us</a></li>
+                        <li><a href="shop.html"><span class="footer-icon">🛍️</span>Shop</a></li>
+                        <li><a href="#"><span class="footer-icon">📏</span>Size Guide</a></li>
+                        <li><a href="contact.html"><span class="footer-icon">📞</span>Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="policies.html"><span class="footer-icon">🚚</span>Shipping</a></li>
+                        <li><a href="policies.html"><span class="footer-icon">↩️</span>Returns</a></li>
+                        <li><a href="#"><span class="footer-icon">❓</span>FAQ</a></li>
+                        <li><a href="#"><span class="footer-icon">📦</span>Track Order</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#"><span class="footer-icon">📷</span>Instagram</a></li>
+                        <li><a href="#"><span class="footer-icon">👥</span>Facebook</a></li>
+                        <li><a href="#"><span class="footer-icon">🐦</span>Twitter</a></li>
+                        <li><a href="#"><span class="footer-icon">📌</span>Pinterest</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Raag & Riwaaz. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
