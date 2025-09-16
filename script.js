@@ -596,27 +596,53 @@ document.querySelectorAll('.feature-card, .craft-item, .value-item, .team-member
     observer.observe(card);
 });
 
-// Mobile menu toggle (for future mobile menu implementation)
-function toggleMobileMenu() {
-    const navMenu = document.querySelector('.nav-menu');
-    navMenu.classList.toggle('active');
-}
+// Mobile menu toggle functionality
+const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+const mobileMenu = document.getElementById('mobileMenu');
 
-// Add mobile menu button if needed
-if (window.innerWidth <= 768) {
-    const navContainer = document.querySelector('.nav-container');
-    const mobileMenuBtn = document.createElement('button');
-    mobileMenuBtn.innerHTML = '☰';
-    mobileMenuBtn.style.cssText = `
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        color: #5A1A1A;
-        cursor: pointer;
-        display: block;
-    `;
-    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-    navContainer.appendChild(mobileMenuBtn);
+if (mobileMenuToggle && mobileMenu) {
+    mobileMenuToggle.addEventListener('click', function() {
+        // Toggle active class on button
+        this.classList.toggle('active');
+
+        // Toggle active class on mobile menu
+        mobileMenu.classList.toggle('active');
+
+        // Prevent body scroll when menu is open
+        if (mobileMenu.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Close mobile menu when clicking on a link
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+            mobileMenuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Close mobile menu on window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            mobileMenuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
 }
 
 // Initialize cart display
@@ -1140,6 +1166,23 @@ function showNotification(message, type = 'info') {
             document.body.removeChild(notification);
         }, 300);
     }, 5000);
+}
+
+// Map functionality for contact page
+function openInMaps() {
+    // Open Google Maps with the studio address
+    const address = "123 Heritage Lane, Connaught Place, New Delhi, 110001, India";
+    const encodedAddress = encodeURIComponent(address);
+    const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
+    window.open(mapsUrl, '_blank');
+}
+
+function getDirections() {
+    // Open Google Maps with directions to the studio
+    const address = "123 Heritage Lane, Connaught Place, New Delhi, 110001, India";
+    const encodedAddress = encodeURIComponent(address);
+    const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`;
+    window.open(directionsUrl, '_blank');
 }
 
 // Initialize all functionality
